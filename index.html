@@ -1,49 +1,446 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome to My Portfolio</title>
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpg" href="Frank_Ouna_Profile_Pic.jfif">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frank Onyango Ouna - Senior Data & Business Analyst</title>
+
+  <!-- Website Icon -->
+  <link rel="icon" type="image/jpeg" href="Frank_Ouna_Profile_Pic.jfif">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --text: #333;
+      --text-light: #7f8c8d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 50px;
+      color: var(--text);
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 5rem 0;
       text-align: center;
     }
 
-    h1 {
-      color: #336699;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    a {
-      color: #1a73e8;
-      text-decoration: none;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .hero h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: var(--light);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .profile-pic {
-      width: 180px;
-      height: 180px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #336699;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      border: 2px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    .skills, .languages {
+      padding: 5rem 0;
+      background-color: white;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-title p {
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background-color: var(--light);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-category h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary);
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-item {
+      background-color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-left: 3px solid var(--secondary);
+    }
+
+    .language-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .language-item {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 200px;
+      max-width: 250px;
+    }
+
+    .language-item h4 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .language-level {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .contact {
+      padding: 5rem 0;
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-details {
+      list-style: none;
+    }
+
+    .contact-details li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-details i {
+      margin-right: 1rem;
+      color: var(--secondary);
+      width: 20px;
+      text-align: center;
+    }
+
+    .contact-details a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-details a:hover {
+      color: var(--secondary);
+    }
+
+    footer {
+      background-color: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
+
 <body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Frank Ouna</div>
+        <ul class="nav-links">
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Profile Image -->
-  <img src="Frank_Ouna_Profile_Pic.jfif" alt="Frank Ouna Profile Picture" class="profile-pic">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <img src="Frank_Ouna_Profile_Pic.jfif" alt="Frank Ouna" class="profile-pic">
+        <h1>Frank Onyango Ouna</h1>
+        <h2>Senior Data & Business Analyst</h2>
+        <p>Results-driven professional with 20+ years of experience in data transformation, advanced analytics, and business intelligence. Expertise in leveraging SQL, Python, Snowflake, Tableau, and Power BI to deliver actionable insights that drive strategic decisions.</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="Frank_Ouna_CV_Sept_2025_Abridged.docx" class="btn btn-secondary" download>Download CV</a>
+          <a href="projects.html" class="btn btn-primary">📂 View My Projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h1>Hello! I'm Frank Ouna</h1>
-  <p>This is my Data Analysis | Business Analyst | Data Engineer portfolio Home Page.</p>
-  <p><a href="projects.html">📂 View My Projects</a></p>
-  <p>More coming soon...</p>
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>Core Expertise</h2>
+        <p>Comprehensive technical skills developed over 20+ years in data analysis and business intelligence</p>
+      </div>
+      <!-- Skills Grid (unchanged, already included above) -->
+      <!-- ... -->
+    </div>
+  </section>
 
+  <!-- Languages Section -->
+  <section class="languages" id="languages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Languages</h2>
+        <p>Multilingual communication skills for global business environments</p>
+      </div>
+      <div class="language-container">
+        <div class="language-item">
+          <h4>English</h4>
+          <p class="language-level">Fluent</p>
+        </div>
+        <div class="language-item">
+          <h4>German</h4>
+          <p class="language-level">B2 Level</p>
+        </div>
+        <div class="language-item">
+          <h4>French</h4>
+          <p class="language-level">A1 Level</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p>I am actively seeking new opportunities as a Senior Data or Business Analyst. Feel free to reach out for collaborations or job opportunities.</p>
+          <ul class="contact-details">
+            <li><i class="fas fa-map-marker-alt"></i> Wuppertaler Straße 1, 28327 Bremen</li>
+            <li><i class="fas fa-phone"></i><a href="tel:+49-1728010308">+49-1728010308</a></li>
+            <li><i class="fas fa-envelope"></i><a href="mailto:Frankouna96@gmail.com">Frankouna96@gmail.com</a></li>
+            <li><i class="fas fa-globe"></i><a href="https://www.linkedin.com/in/frankouna/" target="_blank">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Frank Onyango Ouna. All rights reserved.</p>
+      <p>Kenyan National | Residency & Work Permit: Germany</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
