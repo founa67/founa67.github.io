@@ -162,7 +162,7 @@
       color: var(--primary);
     }
 
-    .skills, .languages {
+    .skills, .languages, .featured-project {
       padding: 5rem 0;
       background-color: white;
     }
@@ -251,6 +251,74 @@
     .language-level {
       color: var(--secondary);
       font-weight: 600;
+    }
+
+    .project-highlight {
+      background-color: var(--light);
+      padding: 3rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .project-content p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .project-link:hover {
+      color: var(--primary);
     }
 
     .contact {
@@ -345,6 +413,7 @@
         <div class="logo">Frank Ouna</div>
         <ul class="nav-links">
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#featured-project">Featured Project</a></li>
           <li><a href="#languages">Languages</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -363,7 +432,7 @@
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-primary">Get In Touch</a>
           <a href="Frank_Ouna_CV_Sept_2025_Abridged.pdf" class="btn btn-secondary" download>Download My CV</a>
-          <a href="projects.html" class="btn btn-primary">📂 View My Projects</a>
+          <a href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank" class="btn btn-primary">View Samba Project</a>
         </div>
       </div>
     </div>
@@ -377,50 +446,171 @@
         <p>Comprehensive technical skills developed over 20+ years in data analysis and business intelligence</p>
       </div>
       <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Data Analysis & Visualization</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Advanced Excel Analysis</div>
-                        <div class="skill-item">Pivot Tables & Dashboards</div>
-                        <div class="skill-item">Tableau</div>
-                        <div class="skill-item">Power BI</div>
-                        <div class="skill-item">Data Visualization</div>
-                        <div class="skill-item">EDA (Exploratory Data Analysis)</div>
-                    </div>
-                </div>
         <div class="skill-category">
-                    <h3>Programming & Databases</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Python (Pandas, NumPy)</div>
-                        <div class="skill-item">SQL (PostgreSQL, MySQL, T-SQL)</div>
-                        <div class="skill-item">Database Management</div>
-                        <div class="skill-item">VBA Automation</div>
-                        <div class="skill-item">Statistical Analysis</div>
-                        <div class="skill-item">Scripting</div>
-                    </div>
-                </div>
+          <h3>Data Analysis & Visualization</h3>
+          <div class="skill-items">
+            <div class="skill-item">Advanced Excel Analysis</div>
+            <div class="skill-item">Pivot Tables & Dashboards</div>
+            <div class="skill-item">Tableau</div>
+            <div class="skill-item">Power BI</div>
+            <div class="skill-item">Data Visualization</div>
+            <div class="skill-item">EDA (Exploratory Data Analysis)</div>
+          </div>
+        </div>
         <div class="skill-category">
-                    <h3>Data Engineering & Cloud</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Snowflake Data Warehouse</div>
-                        <div class="skill-item">ETL/ELT Pipeline Design</div>
-                        <div class="skill-item">Data Integration</div>
-                        <div class="skill-item">Big Data Analysis</div>
-                        <div class="skill-item">Snowpipe</div>
-                        <div class="skill-item">JSON/Parquet Processing</div>
-                    </div>
-                </div>
+          <h3>Programming & Databases</h3>
+          <div class="skill-items">
+            <div class="skill-item">Python (Pandas, NumPy)</div>
+            <div class="skill-item">SQL (PostgreSQL, MySQL, T-SQL)</div>
+            <div class="skill-item">Database Management</div>
+            <div class="skill-item">VBA Automation</div>
+            <div class="skill-item">Statistical Analysis</div>
+            <div class="skill-item">Scripting</div>
+          </div>
+        </div>
         <div class="skill-category">
-                    <h3>Business & Analytics</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">Business Intelligence</div>
-                        <div class="skill-item">Statistical Analysis</div>
-                        <div class="skill-item">KPI Development</div>
-                        <div class="skill-item">Project Management</div>
-                        <div class="skill-item">Data-Driven Decision Making</div>
-                        <div class="skill-item">Fraud Detection Systems</div>
-                    </div>
-                </div>
+          <h3>Data Engineering & Cloud</h3>
+          <div class="skill-items">
+            <div class="skill-item">Snowflake Data Warehouse</div>
+            <div class="skill-item">ETL/ELT Pipeline Design</div>
+            <div class="skill-item">Data Integration</div>
+            <div class="skill-item">Big Data Analysis</div>
+            <div class="skill-item">Snowpipe</div>
+            <div class="skill-item">JSON/Parquet Processing</div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Business & Analytics</h3>
+          <div class="skill-items">
+            <div class="skill-item">Business Intelligence</div>
+            <div class="skill-item">Statistical Analysis</div>
+            <div class="skill-item">KPI Development</div>
+            <div class="skill-item">Project Management</div>
+            <div class="skill-item">Data-Driven Decision Making</div>
+            <div class="skill-item">Fraud Detection Systems</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project Section -->
+  <section class="featured-project" id="featured-project">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Project</h2>
+        <p>Advanced SQL Analytics for Multi-Branch Restaurant Chain</p>
+      </div>
+      
+      <div class="project-highlight">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">🍽️ Samba Restaurant SQL Analytics Portfolio Project</h3>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+          A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📊 Data Architecture</h4>
+            <p style="color: var(--text-light);">Star Schema with 7 dimension tables in Snowflake</p>
+          </div>
+          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🔍 Advanced Analytics</h4>
+            <p style="color: var(--text-light);">15 curated SQL queries from Simple to Advanced</p>
+          </div>
+          <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📈 Business Impact</h4>
+            <p style="color: var(--text-light);">Identified 34% YoY revenue growth drivers</p>
+          </div>
+        </div>
+        
+        <div class="project-tech" style="justify-content: center;">
+          <div class="tech-tag">Snowflake SQL</div>
+          <div class="tech-tag">Star Schema</div>
+          <div class="tech-tag">Window Functions</div>
+          <div class="tech-tag">Z-Score Analysis</div>
+          <div class="tech-tag">Market Basket Analysis</div>
+          <div class="tech-tag">Power BI</div>
+        </div>
+        
+        <div style="text-align: center;">
+          <a href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+          <a href="SQL_Solutions.md" class="btn btn-secondary">
+            <i class="fas fa-code"></i> View SQL Solutions
+          </a>
+        </div>
+      </div>
+      
+      <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Key Analytical Insights</h3>
+      
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Revenue Growth Analysis</h3>
+            <p>Identified 34% YoY revenue growth from 2021-2022, with Nairobi and Mombasa branches driving expansion.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Window Functions</div>
+              <div class="tech-tag">YoY Analysis</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Product Affinity Analysis</h3>
+            <p>Market basket analysis revealed top product pairs frequently purchased together for cross-selling opportunities.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Self-Joins</div>
+              <div class="tech-tag">Co-occurrence</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Branch Performance Scoring</h3>
+            <p>Developed composite z-score metrics to classify branches into Top, Mid, and Low performance tiers.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Z-Score</div>
+              <div class="tech-tag">Composite Metrics</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Holiday Sales Impact</h3>
+            <p>Quantified 15-20% sales uplift during Kenyan public holidays like Jamhuri Day and Madaraka Day.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Seasonality</div>
+              <div class="tech-tag">Holiday Analysis</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Rolling Revenue Trends</h3>
+            <p>Implemented 12-month rolling averages with YoY comparisons to detect sustained growth patterns.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Rolling Aggregates</div>
+              <div class="tech-tag">Time Series</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-content">
+            <h3>Category Margin Optimization</h3>
+            <p>Analyzed margin percentages by category and city to identify most profitable product combinations.</p>
+            <div class="project-tech">
+              <div class="tech-tag">Margin Analysis</div>
+              <div class="tech-tag">Profitability</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -459,7 +649,8 @@
             <li><i class="fas fa-map-marker-alt"></i> Wuppertaler Straße 1, 28327 Bremen</li>
             <li><i class="fas fa-phone"></i><a href="tel:+49-1728010308">+49-1728010308</a></li>
             <li><i class="fas fa-envelope"></i><a href="mailto:Frankouna96@gmail.com">Frankouna96@gmail.com</a></li>
-            <li><i class="fas fa-globe"></i><a href="https://www.linkedin.com/in/frankouna/" target="_blank">LinkedIn Profile</a></li>
+            <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/frankouna/" target="_blank">LinkedIn Profile</a></li>
+            <li><i class="fab fa-github"></i><a href="https://github.com/founa67" target="_blank">GitHub Portfolio</a></li>
           </ul>
         </div>
       </div>
