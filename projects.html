@@ -133,6 +133,23 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
     
+    .project-card.featured {
+      border: 2px solid var(--accent);
+      position: relative;
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--accent);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
     .project-header {
       padding: 1.5rem 1.5rem 0;
     }
@@ -389,6 +406,39 @@
   <section class="projects">
     <div class="container">
       <div class="project-grid">
+        <!-- Featured Project - Samba Restaurant SQL Analytics -->
+        <div class="project-card featured">
+          <div class="featured-badge">Featured Project</div>
+          <div class="project-header">
+            <a class="project-title" href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank">
+              <i class="fas fa-chart-line"></i>Samba Restaurant SQL Analytics Portfolio Project
+            </a>
+            <div class="tech-stack">
+              <span class="tech-tag">Snowflake SQL</span>
+              <span class="tech-tag">Advanced Analytics</span>
+              <span class="tech-tag">Window Functions</span>
+              <span class="tech-tag">Z-Score Analysis</span>
+              <span class="tech-tag">Market Basket Analysis</span>
+              <span class="tech-tag">Power BI</span>
+            </div>
+          </div>
+          <div class="project-description">
+            <p>A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022. This project demonstrates advanced SQL analytics capabilities with 15 curated queries from simple to advanced.</p>
+            <p><strong>Key Analytical Insights:</strong></p>
+            <ul>
+              <li>Identified 34% YoY revenue growth drivers from 2021-2022</li>
+              <li>Market basket analysis revealed top product pairs for cross-selling</li>
+              <li>Developed composite z-score metrics for branch performance classification</li>
+              <li>Quantified 15-20% sales uplift during Kenyan public holidays</li>
+              <li>Implemented 12-month rolling averages with YoY comparisons</li>
+              <li>Analyzed margin percentages by category and city for profitability optimization</li>
+            </ul>
+            <a href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank" class="project-link">
+              View Project <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-header">
@@ -566,147 +616,5 @@
       </div>
     </div>
   </footer>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Projects | Frankouna Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    h1 {
-      color: #2c3e50;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .project {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .project-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    .project-title:hover {
-      text-decoration: underline;
-    }
-
-    .project-description {
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 30px;
-      text-decoration: none;
-      color: #555;
-    }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      font-size: 14px;
-    }
-
-    .footer a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>My Projects</h1>
-
-  <div class="project">
-    <a class="project-title" href="https://github.com/founa67/Samba_Data_Engineering_Project" target="_blank">
-      Samba Data Engineering Project
-    </a>
-    <p class="project-description">
-      This project demonstrates a full-scale data engineering architecture for Samba Enterprises Ltd, a bar and restaurant chain operating across five cities in Kenya with fifteen branches.
-      <br><br>
-      The purpose of this portfolio project is to showcase an end-to-end ELT pipeline on <strong>Snowflake</strong> integrated with <strong>AWS S3</strong>, focusing on <strong>scalability</strong>, <strong>governance</strong>, and <strong>analytics-readiness</strong>.
-    </p>
-  </div>
-
-  <div class="project">
-    <a class="project-title" href="https://github.com/founa67/Samba_Restaurant_Powerbi_Dashboard" target="_blank">
-      Samba Bar & Restaurant: A 15-Year Performance Dashboard
-    </a>
-    <p class="project-description">
-      This project involved designing and developing an end-to-end Power BI business intelligence solution for Samba Bar & Restaurant, a Kenya-based establishment.
-      The interactive dashboard consolidates and analyzes 15 years of operational data (2009–2024), transforming raw, disparate data into a clear, strategic asset for management and executives.
-      <br><br>
-      The solution provides a 360-degree view of the business, enabling data-driven decision-making for sales strategy, menu optimization, staff performance, and geographic expansion.
-    </p>
-  </div>
-
-  <div class="project">
-    <a class="project-title" href="https://github.com/founa67/Safchem-HR-Analytics" target="_blank">
-      Safchem HR Analytics Dashboard
-    </a>
-    <p class="project-description">
-      This project analyzes employee attrition and workforce dynamics at Safchem Kenya using a cleaned HR dataset.
-      The raw HR data was transformed in Excel and visualized in Tableau to deliver actionable insights into employee demographics, job satisfaction, and turnover trends.
-    </p>
-  </div>
-
-  <div class="project">
-    <a class="project-title" href="https://github.com/founa67/DieBaeckerei_Sales_Data_Cleaning_Analysis_and_Executive_Dashboard" target="_blank">
-      DieBäckerei Sales Data Cleaning, Analysis, and Executive Dashboard
-    </a>
-    <p class="project-description">
-      This project demonstrates an end-to-end data analysis workflow in Excel. The dataset represents sales records for DieBäckerei, a bakery chain.
-      The goal was to clean the raw dataset, uncover insights through Pivot Table analysis, and design an interactive Executive Dashboard to support business decision-making.
-    </p>
-  </div>
-
-  <div class="project">
-    <a class="project-title" href="https://github.com/founa67/BREMEN_BIKE_GmbH_Sales_Dashboard_Project" target="_blank">
-      BREMEN BIKE GmbH – Sales Dashboard Project
-    </a>
-    <p class="project-description">
-      This project demonstrates the end-to-end process of data cleaning, transformation, and dashboard development using Microsoft Excel.
-      <br><br>
-      The dataset represents customer and sales information for BREMEN BIKE GmbH, a bicycle retailer.
-      The goal was to:
-      <ul>
-        <li>Prepare and clean raw sales data for accuracy and consistency.</li>
-        <li>Engineer new features (age groups, commute distance, income groups).</li>
-        <li>Build an interactive Excel dashboard for management to analyze customer demographics and purchasing behavior.</li>
-      </ul>
-    </p>
-  </div>
-
-  <a class="back-link" href="index.html">&larr; Back to Home</a>
-
-  <div class="footer">
-    <p>Connect with me on <a href="https://www.linkedin.com/in/frankouna/" target="_blank">LinkedIn</a></p>
-  </div>
-
 </body>
 </html>
