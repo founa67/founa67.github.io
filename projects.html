@@ -70,6 +70,7 @@
     .nav-links {
       display: flex;
       list-style: none;
+      align-items: center;
     }
     
     .nav-links li {
@@ -85,6 +86,33 @@
     
     .nav-links a:hover {
       color: var(--secondary);
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: 2rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .lang-btn:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .lang-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
     }
     
     /* Page Header */
@@ -375,6 +403,10 @@
       .page-header p {
         font-size: 1rem;
       }
+
+      .language-switcher {
+        margin-left: 1rem;
+      }
     }
   </style>
 </head>
@@ -387,10 +419,14 @@
           <a href="index.html">Frank Ouna</a>
         </div>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="projects.html" class="active">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="projects.html" class="active" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+          <li class="language-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -399,8 +435,8 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>My Data Analytics Projects</h1>
-      <p>Showcasing end-to-end data solutions from ETL pipelines to interactive dashboards and business intelligence platforms</p>
+      <h1 data-i18n="page.title">My Data Analytics Projects</h1>
+      <p data-i18n="page.subtitle">Showcasing end-to-end data solutions from ETL pipelines to interactive dashboards and business intelligence platforms</p>
     </div>
   </section>
 
@@ -410,10 +446,10 @@
       <div class="project-grid">
         <!-- Featured Project - Samba Restaurant SQL Analytics -->
         <div class="project-card featured">
-          <div class="featured-badge">Featured Project</div>
+          <div class="featured-badge" data-i18n="project.featured">Featured Project</div>
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank">
-              <i class="fas fa-chart-line"></i>Samba Restaurant SQL Analytics Portfolio Project
+              <i class="fas fa-chart-line"></i><span data-i18n="project1.title">Samba Restaurant SQL Analytics Portfolio Project</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Snowflake SQL</span>
@@ -425,18 +461,18 @@
             </div>
           </div>
           <div class="project-description">
-            <p>A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022. This project demonstrates advanced SQL analytics capabilities with 15 curated queries from simple to advanced.</p>
-            <p><strong>Key Analytical Insights:</strong></p>
+            <p data-i18n="project1.description1">A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022. This project demonstrates advanced SQL analytics capabilities with 15 curated queries from simple to advanced.</p>
+            <p><strong data-i18n="project1.insights">Key Analytical Insights:</strong></p>
             <ul>
-              <li>Identified 34% YoY revenue growth drivers from 2021-2022</li>
-              <li>Market basket analysis revealed top product pairs for cross-selling</li>
-              <li>Developed composite z-score metrics for branch performance classification</li>
-              <li>Quantified 15-20% sales uplift during Kenyan public holidays</li>
-              <li>Implemented 12-month rolling averages with YoY comparisons</li>
-              <li>Analyzed margin percentages by category and city for profitability optimization</li>
+              <li data-i18n="project1.insight1">Identified 34% YoY revenue growth drivers from 2021-2022</li>
+              <li data-i18n="project1.insight2">Market basket analysis revealed top product pairs for cross-selling</li>
+              <li data-i18n="project1.insight3">Developed composite z-score metrics for branch performance classification</li>
+              <li data-i18n="project1.insight4">Quantified 15-20% sales uplift during Kenyan public holidays</li>
+              <li data-i18n="project1.insight5">Implemented 12-month rolling averages with YoY comparisons</li>
+              <li data-i18n="project1.insight6">Analyzed margin percentages by category and city for profitability optimization</li>
             </ul>
             <a href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -445,7 +481,7 @@
         <div class="project-card">
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/Samba_Data_Engineering_Project" target="_blank">
-              <i class="fas fa-database"></i>Samba Data Engineering Project
+              <i class="fas fa-database"></i><span data-i18n="project2.title">Samba Data Engineering Project</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Snowflake</span>
@@ -455,10 +491,10 @@
             </div>
           </div>
           <div class="project-description">
-            <p>This project demonstrates a full-scale data engineering architecture for Samba Enterprises Ltd, a bar and restaurant chain operating across five cities in Kenya with fifteen branches.</p>
-            <p>The purpose of this portfolio project is to showcase an end-to-end ELT pipeline on <strong>Snowflake</strong> integrated with <strong>AWS S3</strong>, focusing on <strong>scalability</strong>, <strong>governance</strong>, and <strong>analytics-readiness</strong>.</p>
+            <p data-i18n="project2.description1">This project demonstrates a full-scale data engineering architecture for Samba Enterprises Ltd, a bar and restaurant chain operating across five cities in Kenya with fifteen branches.</p>
+            <p data-i18n="project2.description2">The purpose of this portfolio project is to showcase an end-to-end ELT pipeline on <strong>Snowflake</strong> integrated with <strong>AWS S3</strong>, focusing on <strong>scalability</strong>, <strong>governance</strong>, and <strong>analytics-readiness</strong>.</p>
             <a href="https://github.com/founa67/Samba_Data_Engineering_Project" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -467,7 +503,7 @@
         <div class="project-card">
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/Samba_Restaurant_Powerbi_Dashboard" target="_blank">
-              <i class="fas fa-chart-bar"></i>Samba Bar & Restaurant: 15-Year Performance Dashboard
+              <i class="fas fa-chart-bar"></i><span data-i18n="project3.title">Samba Bar & Restaurant: 15-Year Performance Dashboard</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Power BI</span>
@@ -477,11 +513,11 @@
             </div>
           </div>
           <div class="project-description">
-            <p>This project involved designing and developing an end-to-end Power BI business intelligence solution for Samba Bar & Restaurant, a Kenya-based establishment.</p>
-            <p>The interactive dashboard consolidates and analyzes 15 years of operational data (2009–2024), transforming raw, disparate data into a clear, strategic asset for management and executives.</p>
-            <p>The solution provides a 360-degree view of the business, enabling data-driven decision-making for sales strategy, menu optimization, staff performance, and geographic expansion.</p>
+            <p data-i18n="project3.description1">This project involved designing and developing an end-to-end Power BI business intelligence solution for Samba Bar & Restaurant, a Kenya-based establishment.</p>
+            <p data-i18n="project3.description2">The interactive dashboard consolidates and analyzes 15 years of operational data (2009–2024), transforming raw, disparate data into a clear, strategic asset for management and executives.</p>
+            <p data-i18n="project3.description3">The solution provides a 360-degree view of the business, enabling data-driven decision-making for sales strategy, menu optimization, staff performance, and geographic expansion.</p>
             <a href="https://github.com/founa67/Samba_Restaurant_Powerbi_Dashboard" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -490,7 +526,7 @@
         <div class="project-card">
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/Safchem-HR-Analytics" target="_blank">
-              <i class="fas fa-users"></i>Safchem HR Analytics Dashboard
+              <i class="fas fa-users"></i><span data-i18n="project4.title">Safchem HR Analytics Dashboard</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Tableau</span>
@@ -500,10 +536,10 @@
             </div>
           </div>
           <div class="project-description">
-            <p>This project analyzes employee attrition and workforce dynamics at Safchem Kenya using a cleaned HR dataset.</p>
-            <p>The raw HR data was transformed in Excel and visualized in Tableau to deliver actionable insights into employee demographics, job satisfaction, and turnover trends.</p>
+            <p data-i18n="project4.description1">This project analyzes employee attrition and workforce dynamics at Safchem Kenya using a cleaned HR dataset.</p>
+            <p data-i18n="project4.description2">The raw HR data was transformed in Excel and visualized in Tableau to deliver actionable insights into employee demographics, job satisfaction, and turnover trends.</p>
             <a href="https://github.com/founa67/Safchem-HR-Analytics" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -512,7 +548,7 @@
         <div class="project-card">
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/DieBaeckerei_Sales_Data_Cleaning_Analysis_and_Executive_Dashboard" target="_blank">
-              <i class="fas fa-bread-slice"></i>DieBäckerei Sales Data Analysis & Executive Dashboard
+              <i class="fas fa-bread-slice"></i><span data-i18n="project5.title">DieBäckerei Sales Data Analysis & Executive Dashboard</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Excel</span>
@@ -522,10 +558,10 @@
             </div>
           </div>
           <div class="project-description">
-            <p>This project demonstrates an end-to-end data analysis workflow in Excel. The dataset represents sales records for DieBäckerei, a bakery chain.</p>
-            <p>The goal was to clean the raw dataset, uncover insights through Pivot Table analysis, and design an interactive Executive Dashboard to support business decision-making.</p>
+            <p data-i18n="project5.description1">This project demonstrates an end-to-end data analysis workflow in Excel. The dataset represents sales records for DieBäckerei, a bakery chain.</p>
+            <p data-i18n="project5.description2">The goal was to clean the raw dataset, uncover insights through Pivot Table analysis, and design an interactive Executive Dashboard to support business decision-making.</p>
             <a href="https://github.com/founa67/DieBaeckerei_Sales_Data_Cleaning_Analysis_and_Executive_Dashboard" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -534,7 +570,7 @@
         <div class="project-card">
           <div class="project-header">
             <a class="project-title" href="https://github.com/founa67/BREMEN_BIKE_GmbH_Sales_Dashboard_Project" target="_blank">
-              <i class="fas fa-bicycle"></i>BREMEN BIKE GmbH – Sales Dashboard Project
+              <i class="fas fa-bicycle"></i><span data-i18n="project6.title">BREMEN BIKE GmbH – Sales Dashboard Project</span>
             </a>
             <div class="tech-stack">
               <span class="tech-tag">Excel</span>
@@ -544,22 +580,22 @@
             </div>
           </div>
           <div class="project-description">
-            <p>This project demonstrates the end-to-end process of data cleaning, transformation, and dashboard development using Microsoft Excel.</p>
-            <p>The dataset represents customer and sales information for BREMEN BIKE GmbH, a bicycle retailer. The goal was to:</p>
+            <p data-i18n="project6.description1">This project demonstrates the end-to-end process of data cleaning, transformation, and dashboard development using Microsoft Excel.</p>
+            <p data-i18n="project6.description2">The dataset represents customer and sales information for BREMEN BIKE GmbH, a bicycle retailer. The goal was to:</p>
             <ul>
-              <li>Prepare and clean raw sales data for accuracy and consistency.</li>
-              <li>Engineer new features (age groups, commute distance, income groups).</li>
-              <li>Build an interactive Excel dashboard for management to analyze customer demographics and purchasing behavior.</li>
+              <li data-i18n="project6.goal1">Prepare and clean raw sales data for accuracy and consistency.</li>
+              <li data-i18n="project6.goal2">Engineer new features (age groups, commute distance, income groups).</li>
+              <li data-i18n="project6.goal3">Build an interactive Excel dashboard for management to analyze customer demographics and purchasing behavior.</li>
             </ul>
             <a href="https://github.com/founa67/BREMEN_BIKE_GmbH_Sales_Dashboard_Project" target="_blank" class="project-link">
-              View Project <i class="fas fa-arrow-right"></i>
+              <span data-i18n="project.view">View Project</span> <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>
       </div>
 
       <a class="back-link" href="index.html">
-        <i class="fas fa-arrow-left"></i> Back to Home
+        <i class="fas fa-arrow-left"></i> <span data-i18n="back.home">Back to Home</span>
       </a>
     </div>
   </section>
@@ -569,8 +605,8 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Frank Onyango Ouna</h3>
-          <p>Senior Data & Business Analyst with 20+ years of experience in data transformation, advanced analytics, and business intelligence.</p>
+          <h3 data-i18n="footer.name">Frank Onyango Ouna</h3>
+          <p data-i18n="footer.description">Senior Data & Business Analyst with 20+ years of experience in data transformation, advanced analytics, and business intelligence.</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/frankouna/" target="_blank" class="social-link">
               <i class="fab fa-linkedin-in"></i>
@@ -585,17 +621,17 @@
         </div>
         
         <div class="footer-section">
-          <h3>Quick Links</h3>
+          <h3 data-i18n="footer.links">Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="index.html#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="projects.html" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
-          <h3>Contact Info</h3>
+          <h3 data-i18n="footer.contact">Contact Info</h3>
           <ul class="contact-details">
             <li>
               <i class="fas fa-map-marker-alt"></i>
@@ -614,9 +650,209 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2025 Frank Onyango Ouna. All rights reserved. | Kenyan National | Residency & Work Permit: Germany</p>
+        <p>&copy; 2025 Frank Onyango Ouna. <span data-i18n="footer.rights">All rights reserved.</span> | <span data-i18n="footer.nationality">Kenyan National | Residency & Work Permit: Germany</span></p>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Language translations
+    const translations = {
+      en: {
+        // Navigation
+        "nav.home": "Home",
+        "nav.skills": "Skills",
+        "nav.projects": "Projects",
+        "nav.contact": "Contact",
+        
+        // Page Header
+        "page.title": "My Data Analytics Projects",
+        "page.subtitle": "Showcasing end-to-end data solutions from ETL pipelines to interactive dashboards and business intelligence platforms",
+        
+        // Project Section
+        "project.featured": "Featured Project",
+        "project.view": "View Project",
+        "back.home": "Back to Home",
+        
+        // Project 1 - Samba Restaurant SQL Analytics
+        "project1.title": "Samba Restaurant SQL Analytics Portfolio Project",
+        "project1.description1": "A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022. This project demonstrates advanced SQL analytics capabilities with 15 curated queries from simple to advanced.",
+        "project1.insights": "Key Analytical Insights:",
+        "project1.insight1": "Identified 34% YoY revenue growth drivers from 2021-2022",
+        "project1.insight2": "Market basket analysis revealed top product pairs for cross-selling",
+        "project1.insight3": "Developed composite z-score metrics for branch performance classification",
+        "project1.insight4": "Quantified 15-20% sales uplift during Kenyan public holidays",
+        "project1.insight5": "Implemented 12-month rolling averages with YoY comparisons",
+        "project1.insight6": "Analyzed margin percentages by category and city for profitability optimization",
+        
+        // Project 2 - Samba Data Engineering
+        "project2.title": "Samba Data Engineering Project",
+        "project2.description1": "This project demonstrates a full-scale data engineering architecture for Samba Enterprises Ltd, a bar and restaurant chain operating across five cities in Kenya with fifteen branches.",
+        "project2.description2": "The purpose of this portfolio project is to showcase an end-to-end ELT pipeline on Snowflake integrated with AWS S3, focusing on scalability, governance, and analytics-readiness.",
+        
+        // Project 3 - Samba Power BI Dashboard
+        "project3.title": "Samba Bar & Restaurant: 15-Year Performance Dashboard",
+        "project3.description1": "This project involved designing and developing an end-to-end Power BI business intelligence solution for Samba Bar & Restaurant, a Kenya-based establishment.",
+        "project3.description2": "The interactive dashboard consolidates and analyzes 15 years of operational data (2009–2024), transforming raw, disparate data into a clear, strategic asset for management and executives.",
+        "project3.description3": "The solution provides a 360-degree view of the business, enabling data-driven decision-making for sales strategy, menu optimization, staff performance, and geographic expansion.",
+        
+        // Project 4 - Safchem HR Analytics
+        "project4.title": "Safchem HR Analytics Dashboard",
+        "project4.description1": "This project analyzes employee attrition and workforce dynamics at Safchem Kenya using a cleaned HR dataset.",
+        "project4.description2": "The raw HR data was transformed in Excel and visualized in Tableau to deliver actionable insights into employee demographics, job satisfaction, and turnover trends.",
+        
+        // Project 5 - DieBäckerei
+        "project5.title": "DieBäckerei Sales Data Analysis & Executive Dashboard",
+        "project5.description1": "This project demonstrates an end-to-end data analysis workflow in Excel. The dataset represents sales records for DieBäckerei, a bakery chain.",
+        "project5.description2": "The goal was to clean the raw dataset, uncover insights through Pivot Table analysis, and design an interactive Executive Dashboard to support business decision-making.",
+        
+        // Project 6 - BREMEN BIKE
+        "project6.title": "BREMEN BIKE GmbH – Sales Dashboard Project",
+        "project6.description1": "This project demonstrates the end-to-end process of data cleaning, transformation, and dashboard development using Microsoft Excel.",
+        "project6.description2": "The dataset represents customer and sales information for BREMEN BIKE GmbH, a bicycle retailer. The goal was to:",
+        "project6.goal1": "Prepare and clean raw sales data for accuracy and consistency.",
+        "project6.goal2": "Engineer new features (age groups, commute distance, income groups).",
+        "project6.goal3": "Build an interactive Excel dashboard for management to analyze customer demographics and purchasing behavior.",
+        
+        // Footer
+        "footer.name": "Frank Onyango Ouna",
+        "footer.description": "Senior Data & Business Analyst with 20+ years of experience in data transformation, advanced analytics, and business intelligence.",
+        "footer.links": "Quick Links",
+        "footer.contact": "Contact Info",
+        "footer.rights": "All rights reserved.",
+        "footer.nationality": "Kenyan National | Residency & Work Permit: Germany"
+      },
+      de: {
+        // Navigation
+        "nav.home": "Startseite",
+        "nav.skills": "Fähigkeiten",
+        "nav.projects": "Projekte",
+        "nav.contact": "Kontakt",
+        
+        // Page Header
+        "page.title": "Meine Data Analytics Projekte",
+        "page.subtitle": "Prasentation von End-to-End-Datenlösungen von ETL-Pipelines bis zu interaktiven Dashboards und Business-Intelligence-Plattformen",
+        
+        // Project Section
+        "project.featured": "Ausgewähltes Projekt",
+        "project.view": "Projekt ansehen",
+        "back.home": "Zurück zur Startseite",
+        
+        // Project 1 - Samba Restaurant SQL Analytics
+        "project1.title": "Samba Restaurant SQL Analytics Portfolio-Projekt",
+        "project1.description1": "Eine umfassende Business-Intelligence-Lösung zur Analyse von 500.000+ Verkaufstransaktionen in 5 kenianischen Städten von 2009-2022. Dieses Projekt demonstriert erweiterte SQL-Analysefähigkeiten mit 15 kuratierten Abfragen von einfach bis fortgeschritten.",
+        "project1.insights": "Wichtige analytische Erkenntnisse:",
+        "project1.insight1": "Identifizierte 34% YoY-Umsatzwachstumstreiber von 2021-2022",
+        "project1.insight2": "Warenkorbanalyse zeigte Top-Produktpaare für Cross-Selling",
+        "project1.insight3": "Entwickelte zusammengesetzte Z-Score-Metriken für Filialleistungsklassifizierung",
+        "project1.insight4": "Quantifizierte 15-20% Verkaufssteigerung während kenianischer Feiertage",
+        "project1.insight5": "Implementierte 12-Monats-Gleitdurchschnitte mit Jahresvergleichen",
+        "project1.insight6": "Analysierte Margenprozentsätze nach Kategorie und Stadt für Gewinnoptimierung",
+        
+        // Project 2 - Samba Data Engineering
+        "project2.title": "Samba Data Engineering Projekt",
+        "project2.description1": "Dieses Projekt demonstriert eine vollständige Data-Engineering-Architektur für Samba Enterprises Ltd, eine Bar- und Restaurantkette mit fünfzehn Filialen in fünf kenianischen Städten.",
+        "project2.description2": "Der Zweck dieses Portfolio-Projekts ist es, eine End-to-End-ELT-Pipeline auf Snowflake zu präsentieren, integriert mit AWS S3, mit Fokus auf Skalierbarkeit, Governance und Analysebereitschaft.",
+        
+        // Project 3 - Samba Power BI Dashboard
+        "project3.title": "Samba Bar & Restaurant: 15-Jahres-Leistungsdashboard",
+        "project3.description1": "Dieses Projekt umfasste die Gestaltung und Entwicklung einer End-to-End-Power-BI-Business-Intelligence-Lösung für Samba Bar & Restaurant, ein kenianisches Unternehmen.",
+        "project3.description2": "Das interaktive Dashboard konsolidiert und analysiert 15 Jahre Betriebsdaten (2009–2024) und verwandelt rohe, disparate Daten in eine klare, strategische Ressource für Management und Führungskräfte.",
+        "project3.description3": "Die Lösung bietet einen 360-Grad-Blick auf das Unternehmen und ermöglicht datengestützte Entscheidungen für Vertriebsstrategie, Menüoptimierung, Mitarbeiterleistung und geografische Expansion.",
+        
+        // Project 4 - Safchem HR Analytics
+        "project4.title": "Safchem HR Analytics Dashboard",
+        "project4.description1": "Dieses Projekt analysiert die Mitarbeiterfluktuation und Arbeitskräftedynamik bei Safchem Kenya unter Verwendung eines bereinigten HR-Datensatzes.",
+        "project4.description2": "Die rohen HR-Daten wurden in Excel transformiert und in Tableau visualisiert, um umsetzbare Erkenntnisse zu Mitarbeiterdemografie, Arbeitszufriedenheit und Fluktuationstrends zu liefern.",
+        
+        // Project 5 - DieBäckerei
+        "project5.title": "DieBäckerei Verkaufsdatenanalyse & Executive Dashboard",
+        "project5.description1": "Dieses Projekt demonstriert einen End-to-End-Datenanalyse-Workflow in Excel. Der Datensatz repräsentiert Verkaufsaufzeichnungen für DieBäckerei, eine Bäckereikette.",
+        "project5.description2": "Das Ziel war es, den Rohdatensatz zu bereinigen, Erkenntnisse durch Pivot-Tabellen-Analyse zu gewinnen und ein interaktives Executive Dashboard zur Unterstützung geschäftlicher Entscheidungen zu gestalten.",
+        
+        // Project 6 - BREMEN BIKE
+        "project6.title": "BREMEN BIKE GmbH – Verkaufsdashboard Projekt",
+        "project6.description1": "Dieses Projekt demonstriert den End-to-End-Prozess der Datenbereinigung, -transformation und Dashboard-Entwicklung mit Microsoft Excel.",
+        "project6.description2": "Der Datensatz repräsentiert Kunden- und Verkaufsinformationen für BREMEN BIKE GmbH, einen Fahrradhändler. Das Ziel war:",
+        "project6.goal1": "Rohverkaufsdaten für Genauigkeit und Konsistenz vorbereiten und bereinigen.",
+        "project6.goal2": "Neue Funktionen entwickeln (Altersgruppen, Pendelstrecke, Einkommensgruppen).",
+        "project6.goal3": "Ein interaktives Excel-Dashboard für das Management erstellen, um Kundendemografie und Kaufverhalten zu analysieren.",
+        
+        // Footer
+        "footer.name": "Frank Onyango Ouna",
+        "footer.description": "Senior Data & Business Analyst mit 20+ Jahren Erfahrung in Datentransformation, Advanced Analytics und Business Intelligence.",
+        "footer.links": "Schnelllinks",
+        "footer.contact": "Kontaktinformationen",
+        "footer.rights": "Alle Rechte vorbehalten.",
+        "footer.nationality": "Kenia National | Aufenthalts- & Arbeitserlaubnis: Deutschland"
+      }
+    };
+
+    // Language switching functionality
+    let currentLang = 'en';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      
+      // Update language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+      
+      // Update navigation links
+      const navLinks = {
+        'home': 'nav.home',
+        'skills': 'nav.skills',
+        'projects': 'nav.projects',
+        'contact': 'nav.contact'
+      };
+      
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        const text = link.textContent.trim();
+        if (navLinks[text.toLowerCase()]) {
+          link.textContent = translations[lang][navLinks[text.toLowerCase()]];
+        }
+      });
+      
+      // Update footer links
+      document.querySelectorAll('.footer-links a').forEach(link => {
+        const text = link.textContent.trim();
+        if (navLinks[text.toLowerCase()]) {
+          link.textContent = translations[lang][navLinks[text.toLowerCase()]];
+        }
+      });
+      
+      // Save preference to localStorage
+      localStorage.setItem('preferred-language', lang);
+    }
+
+    // Initialize language
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferred-language') || 'en';
+      switchLanguage(savedLang);
+      
+      // Add event listeners to language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          switchLanguage(this.dataset.lang);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
