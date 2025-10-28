@@ -64,6 +64,7 @@
     .nav-links {
       display: flex;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links li {
@@ -78,6 +79,33 @@
 
     .nav-links a:hover {
       color: var(--secondary);
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: 2rem;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .lang-btn:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .lang-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
     }
 
     .hero {
@@ -401,6 +429,10 @@
       .nav-links {
         display: none;
       }
+
+      .language-switcher {
+        margin-left: 1rem;
+      }
     }
   </style>
 </head>
@@ -416,6 +448,10 @@
           <li><a href="#featured-project">Featured Project</a></li>
           <li><a href="#languages">Languages</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li class="language-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -426,13 +462,13 @@
     <div class="container">
       <div class="hero-content">
         <img src="Frank_Ouna_Profile_Pic.jfif" alt="Frank Ouna" class="profile-pic">
-        <h1>Frank Ouna</h1>
-        <h2>Senior Data & Business Analyst | Data Engineer</h2>
-        <p>Results-driven professional with 20+ years of experience in data transformation, advanced analytics, and business intelligence. Expertise in leveraging SQL, Python, Snowflake, Tableau, and Power BI to deliver actionable insights that drive strategic decisions.</p>
+        <h1 data-i18n="hero.title">Frank Ouna</h1>
+        <h2 data-i18n="hero.subtitle">Senior Data & Business Analyst | Data Engineer</h2>
+        <p data-i18n="hero.description">Results-driven professional with 20+ years of experience in data transformation, advanced analytics, and business intelligence. Expertise in leveraging SQL, Python, Snowflake, Tableau, and Power BI to deliver actionable insights that drive strategic decisions.</p>
         <div class="cta-buttons">
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
-          <a href="Frank_Ouna_CV_Oct_2025_Data_Analyst.pdf" class="btn btn-secondary" download>Download My CV</a>
-          <a href="projects.html" class="btn btn-primary">View Samba Project</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Get In Touch</a>
+          <a href="Frank_Ouna_CV_Oct_2025_Data_Analyst.pdf" class="btn btn-secondary" download data-i18n="hero.cta2">Download My CV</a>
+          <a href="projects.html" class="btn btn-primary" data-i18n="hero.cta3">View Samba Project</a>
         </div>
       </div>
     </div>
@@ -442,52 +478,52 @@
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-title">
-        <h2>Core Expertise</h2>
-        <p>Comprehensive technical skills developed over 20+ years in data analysis and business intelligence</p>
+        <h2 data-i18n="skills.title">Core Expertise</h2>
+        <p data-i18n="skills.subtitle">Comprehensive technical skills developed over 20+ years in data analysis and business intelligence</p>
       </div>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3>Data Analysis & Visualization</h3>
+          <h3 data-i18n="skills.category1">Data Analysis & Visualization</h3>
           <div class="skill-items">
-            <div class="skill-item">Advanced Excel Analysis</div>
-            <div class="skill-item">Pivot Tables & Dashboards</div>
-            <div class="skill-item">Tableau</div>
-            <div class="skill-item">Power BI</div>
-            <div class="skill-item">Data Visualization</div>
-            <div class="skill-item">EDA (Exploratory Data Analysis)</div>
+            <div class="skill-item" data-i18n="skills.item1">Advanced Excel Analysis</div>
+            <div class="skill-item" data-i18n="skills.item2">Pivot Tables & Dashboards</div>
+            <div class="skill-item" data-i18n="skills.item3">Tableau</div>
+            <div class="skill-item" data-i18n="skills.item4">Power BI</div>
+            <div class="skill-item" data-i18n="skills.item5">Data Visualization</div>
+            <div class="skill-item" data-i18n="skills.item6">EDA (Exploratory Data Analysis)</div>
           </div>
         </div>
         <div class="skill-category">
-          <h3>Programming & Databases</h3>
+          <h3 data-i18n="skills.category2">Programming & Databases</h3>
           <div class="skill-items">
-            <div class="skill-item">Python (Pandas, NumPy)</div>
-            <div class="skill-item">SQL (PostgreSQL, MySQL, T-SQL)</div>
-            <div class="skill-item">Database Management</div>
-            <div class="skill-item">VBA Automation</div>
-            <div class="skill-item">Statistical Analysis</div>
-            <div class="skill-item">Scripting</div>
+            <div class="skill-item" data-i18n="skills.item7">Python (Pandas, NumPy)</div>
+            <div class="skill-item" data-i18n="skills.item8">SQL (PostgreSQL, MySQL, T-SQL)</div>
+            <div class="skill-item" data-i18n="skills.item9">Database Management</div>
+            <div class="skill-item" data-i18n="skills.item10">VBA Automation</div>
+            <div class="skill-item" data-i18n="skills.item11">Statistical Analysis</div>
+            <div class="skill-item" data-i18n="skills.item12">Scripting</div>
           </div>
         </div>
         <div class="skill-category">
-          <h3>Data Engineering & Cloud</h3>
+          <h3 data-i18n="skills.category3">Data Engineering & Cloud</h3>
           <div class="skill-items">
-            <div class="skill-item">Snowflake Data Warehouse</div>
-            <div class="skill-item">ETL/ELT Pipeline Design</div>
-            <div class="skill-item">Data Integration</div>
-            <div class="skill-item">Big Data Analysis</div>
-            <div class="skill-item">Snowpipe</div>
-            <div class="skill-item">JSON/Parquet Processing</div>
+            <div class="skill-item" data-i18n="skills.item13">Snowflake Data Warehouse</div>
+            <div class="skill-item" data-i18n="skills.item14">ETL/ELT Pipeline Design</div>
+            <div class="skill-item" data-i18n="skills.item15">Data Integration</div>
+            <div class="skill-item" data-i18n="skills.item16">Big Data Analysis</div>
+            <div class="skill-item" data-i18n="skills.item17">Snowpipe</div>
+            <div class="skill-item" data-i18n="skills.item18">JSON/Parquet Processing</div>
           </div>
         </div>
         <div class="skill-category">
-          <h3>Business & Analytics</h3>
+          <h3 data-i18n="skills.category4">Business & Analytics</h3>
           <div class="skill-items">
-            <div class="skill-item">Business Intelligence</div>
-            <div class="skill-item">Statistical Analysis</div>
-            <div class="skill-item">KPI Development</div>
-            <div class="skill-item">Project Management</div>
-            <div class="skill-item">Data-Driven Decision Making</div>
-            <div class="skill-item">Fraud Detection Systems</div>
+            <div class="skill-item" data-i18n="skills.item19">Business Intelligence</div>
+            <div class="skill-item" data-i18n="skills.item20">Statistical Analysis</div>
+            <div class="skill-item" data-i18n="skills.item21">KPI Development</div>
+            <div class="skill-item" data-i18n="skills.item22">Project Management</div>
+            <div class="skill-item" data-i18n="skills.item23">Data-Driven Decision Making</div>
+            <div class="skill-item" data-i18n="skills.item24">Fraud Detection Systems</div>
           </div>
         </div>
       </div>
@@ -498,28 +534,28 @@
   <section class="featured-project" id="featured-project">
     <div class="container">
       <div class="section-title">
-        <h2>Featured Project</h2>
-        <p>Advanced SQL Analytics for Multi-Branch Restaurant Chain</p>
+        <h2 data-i18n="project.title">Featured Project</h2>
+        <p data-i18n="project.subtitle">Advanced SQL Analytics for Multi-Branch Restaurant Chain</p>
       </div>
       
       <div class="project-highlight">
-        <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);">🍽️ Samba Restaurant SQL Analytics Portfolio Project</h3>
-        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+        <h3 style="text-align: center; margin-bottom: 1.5rem; color: var(--primary);" data-i18n="project.highlight.title">🍽️ Samba Restaurant SQL Analytics Portfolio Project</h3>
+        <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;" data-i18n="project.highlight.description">
           A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022
         </p>
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
           <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📊 Data Architecture</h4>
-            <p style="color: var(--text-light);">Star Schema with 7 dimension tables in Snowflake</p>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;" data-i18n="project.highlight.feature1.title">📊 Data Architecture</h4>
+            <p style="color: var(--text-light);" data-i18n="project.highlight.feature1.desc">Star Schema with 7 dimension tables in Snowflake</p>
           </div>
           <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">🔍 Advanced Analytics</h4>
-            <p style="color: var(--text-light);">15 curated SQL queries from Simple to Advanced</p>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;" data-i18n="project.highlight.feature2.title">🔍 Advanced Analytics</h4>
+            <p style="color: var(--text-light);" data-i18n="project.highlight.feature2.desc">15 curated SQL queries from Simple to Advanced</p>
           </div>
           <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;">📈 Business Impact</h4>
-            <p style="color: var(--text-light);">Identified 34% YoY revenue growth drivers</p>
+            <h4 style="color: var(--primary); margin-bottom: 0.5rem;" data-i18n="project.highlight.feature3.title">📈 Business Impact</h4>
+            <p style="color: var(--text-light);" data-i18n="project.highlight.feature3.desc">Identified 34% YoY revenue growth drivers</p>
           </div>
         </div>
         
@@ -534,21 +570,21 @@
         
         <div style="text-align: center;">
           <a href="https://github.com/founa67/Samba_Restaurant_SQL_Analytics_Portfolio_Project" target="_blank" class="btn btn-primary" style="margin-right: 1rem;">
-            <i class="fab fa-github"></i> View on GitHub
+            <i class="fab fa-github"></i> <span data-i18n="project.highlight.button1">View on GitHub</span>
           </a>
           <a href="SQL_Solutions.md" class="btn btn-secondary">
-            <i class="fas fa-code"></i> View SQL Solutions
+            <i class="fas fa-code"></i> <span data-i18n="project.highlight.button2">View SQL Solutions</span>
           </a>
         </div>
       </div>
       
-      <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);">Key Analytical Insights</h3>
+      <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--primary);" data-i18n="project.insights.title">Key Analytical Insights</h3>
       
       <div class="project-grid">
         <div class="project-card">
           <div class="project-content">
-            <h3>Revenue Growth Analysis</h3>
-            <p>Identified 34% YoY revenue growth from 2021-2022, with Nairobi and Mombasa branches driving expansion.</p>
+            <h3 data-i18n="project.insight1.title">Revenue Growth Analysis</h3>
+            <p data-i18n="project.insight1.desc">Identified 34% YoY revenue growth from 2021-2022, with Nairobi and Mombasa branches driving expansion.</p>
             <div class="project-tech">
               <div class="tech-tag">Window Functions</div>
               <div class="tech-tag">YoY Analysis</div>
@@ -558,8 +594,8 @@
         
         <div class="project-card">
           <div class="project-content">
-            <h3>Product Affinity Analysis</h3>
-            <p>Market basket analysis revealed top product pairs frequently purchased together for cross-selling opportunities.</p>
+            <h3 data-i18n="project.insight2.title">Product Affinity Analysis</h3>
+            <p data-i18n="project.insight2.desc">Market basket analysis revealed top product pairs frequently purchased together for cross-selling opportunities.</p>
             <div class="project-tech">
               <div class="tech-tag">Self-Joins</div>
               <div class="tech-tag">Co-occurrence</div>
@@ -569,8 +605,8 @@
         
         <div class="project-card">
           <div class="project-content">
-            <h3>Branch Performance Scoring</h3>
-            <p>Developed composite z-score metrics to classify branches into Top, Mid, and Low performance tiers.</p>
+            <h3 data-i18n="project.insight3.title">Branch Performance Scoring</h3>
+            <p data-i18n="project.insight3.desc">Developed composite z-score metrics to classify branches into Top, Mid, and Low performance tiers.</p>
             <div class="project-tech">
               <div class="tech-tag">Z-Score</div>
               <div class="tech-tag">Composite Metrics</div>
@@ -580,8 +616,8 @@
         
         <div class="project-card">
           <div class="project-content">
-            <h3>Holiday Sales Impact</h3>
-            <p>Quantified 15-20% sales uplift during Kenyan public holidays like Jamhuri Day and Madaraka Day.</p>
+            <h3 data-i18n="project.insight4.title">Holiday Sales Impact</h3>
+            <p data-i18n="project.insight4.desc">Quantified 15-20% sales uplift during Kenyan public holidays like Jamhuri Day and Madaraka Day.</p>
             <div class="project-tech">
               <div class="tech-tag">Seasonality</div>
               <div class="tech-tag">Holiday Analysis</div>
@@ -591,8 +627,8 @@
         
         <div class="project-card">
           <div class="project-content">
-            <h3>Rolling Revenue Trends</h3>
-            <p>Implemented 12-month rolling averages with YoY comparisons to detect sustained growth patterns.</p>
+            <h3 data-i18n="project.insight5.title">Rolling Revenue Trends</h3>
+            <p data-i18n="project.insight5.desc">Implemented 12-month rolling averages with YoY comparisons to detect sustained growth patterns.</p>
             <div class="project-tech">
               <div class="tech-tag">Rolling Aggregates</div>
               <div class="tech-tag">Time Series</div>
@@ -602,8 +638,8 @@
         
         <div class="project-card">
           <div class="project-content">
-            <h3>Category Margin Optimization</h3>
-            <p>Analyzed margin percentages by category and city to identify most profitable product combinations.</p>
+            <h3 data-i18n="project.insight6.title">Category Margin Optimization</h3>
+            <p data-i18n="project.insight6.desc">Analyzed margin percentages by category and city to identify most profitable product combinations.</p>
             <div class="project-tech">
               <div class="tech-tag">Margin Analysis</div>
               <div class="tech-tag">Profitability</div>
@@ -618,21 +654,21 @@
   <section class="languages" id="languages">
     <div class="container">
       <div class="section-title">
-        <h2>Languages</h2>
-        <p>Multilingual communication skills for global business environments</p>
+        <h2 data-i18n="languages.title">Languages</h2>
+        <p data-i18n="languages.subtitle">Multilingual communication skills for global business environments</p>
       </div>
       <div class="language-container">
         <div class="language-item">
           <h4>English</h4>
-          <p class="language-level">Fluent</p>
+          <p class="language-level" data-i18n="languages.english">Fluent</p>
         </div>
         <div class="language-item">
           <h4>German</h4>
-          <p class="language-level">B2 Level</p>
+          <p class="language-level" data-i18n="languages.german">B2 Level</p>
         </div>
         <div class="language-item">
           <h4>French</h4>
-          <p class="language-level">A1 Level</p>
+          <p class="language-level" data-i18n="languages.french">A1 Level</p>
         </div>
       </div>
     </div>
@@ -643,14 +679,14 @@
     <div class="container">
       <div class="contact-container">
         <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <p>I am actively seeking new opportunities as a Senior Data or Business Analyst | Data Engineer. Feel free to reach out for collaborations or job opportunities.</p>
+          <h3 data-i18n="contact.title">Get In Touch</h3>
+          <p data-i18n="contact.description">I am actively seeking new opportunities as a Senior Data or Business Analyst | Data Engineer. Feel free to reach out for collaborations or job opportunities.</p>
           <ul class="contact-details">
             <li><i class="fas fa-map-marker-alt"></i> Wuppertaler Straße 1, 28327 Bremen</li>
             <li><i class="fas fa-phone"></i><a href="tel:+49-1728010308">+49-1728010308</a></li>
             <li><i class="fas fa-envelope"></i><a href="mailto:Frankouna96@gmail.com">Frankouna96@gmail.com</a></li>
-            <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/frankouna/" target="_blank">LinkedIn Profile</a></li>
-            <li><i class="fab fa-github"></i><a href="https://github.com/founa67" target="_blank">GitHub Portfolio</a></li>
+            <li><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/frankouna/" target="_blank" data-i18n="contact.linkedin">LinkedIn Profile</a></li>
+            <li><i class="fab fa-github"></i><a href="https://github.com/founa67" target="_blank" data-i18n="contact.github">GitHub Portfolio</a></li>
           </ul>
         </div>
       </div>
@@ -660,12 +696,256 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Frank Ouna. All rights reserved.</p>
-      <p>Kenyan National | Residency & Work Permit: Germany</p>
+      <p>&copy; 2025 Frank Ouna. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p data-i18n="footer.nationality">Kenyan National | Residency & Work Permit: Germany</p>
     </div>
   </footer>
 
   <script>
+    // Language translations
+    const translations = {
+      en: {
+        // Navigation
+        "nav.skills": "Skills",
+        "nav.project": "Featured Project",
+        "nav.languages": "Languages",
+        "nav.contact": "Contact",
+        
+        // Hero Section
+        "hero.title": "Frank Ouna",
+        "hero.subtitle": "Senior Data & Business Analyst | Data Engineer",
+        "hero.description": "Results-driven professional with 20+ years of experience in data transformation, advanced analytics, and business intelligence. Expertise in leveraging SQL, Python, Snowflake, Tableau, and Power BI to deliver actionable insights that drive strategic decisions.",
+        "hero.cta1": "Get In Touch",
+        "hero.cta2": "Download My CV",
+        "hero.cta3": "View Samba Project",
+        
+        // Skills Section
+        "skills.title": "Core Expertise",
+        "skills.subtitle": "Comprehensive technical skills developed over 20+ years in data analysis and business intelligence",
+        "skills.category1": "Data Analysis & Visualization",
+        "skills.category2": "Programming & Databases",
+        "skills.category3": "Data Engineering & Cloud",
+        "skills.category4": "Business & Analytics",
+        "skills.item1": "Advanced Excel Analysis",
+        "skills.item2": "Pivot Tables & Dashboards",
+        "skills.item3": "Tableau",
+        "skills.item4": "Power BI",
+        "skills.item5": "Data Visualization",
+        "skills.item6": "EDA (Exploratory Data Analysis)",
+        "skills.item7": "Python (Pandas, NumPy)",
+        "skills.item8": "SQL (PostgreSQL, MySQL, T-SQL)",
+        "skills.item9": "Database Management",
+        "skills.item10": "VBA Automation",
+        "skills.item11": "Statistical Analysis",
+        "skills.item12": "Scripting",
+        "skills.item13": "Snowflake Data Warehouse",
+        "skills.item14": "ETL/ELT Pipeline Design",
+        "skills.item15": "Data Integration",
+        "skills.item16": "Big Data Analysis",
+        "skills.item17": "Snowpipe",
+        "skills.item18": "JSON/Parquet Processing",
+        "skills.item19": "Business Intelligence",
+        "skills.item20": "Statistical Analysis",
+        "skills.item21": "KPI Development",
+        "skills.item22": "Project Management",
+        "skills.item23": "Data-Driven Decision Making",
+        "skills.item24": "Fraud Detection Systems",
+        
+        // Project Section
+        "project.title": "Featured Project",
+        "project.subtitle": "Advanced SQL Analytics for Multi-Branch Restaurant Chain",
+        "project.highlight.title": "🍽️ Samba Restaurant SQL Analytics Portfolio Project",
+        "project.highlight.description": "A comprehensive business intelligence solution analyzing 500,000+ sales transactions across 5 Kenyan cities from 2009-2022",
+        "project.highlight.feature1.title": "📊 Data Architecture",
+        "project.highlight.feature1.desc": "Star Schema with 7 dimension tables in Snowflake",
+        "project.highlight.feature2.title": "🔍 Advanced Analytics",
+        "project.highlight.feature2.desc": "15 curated SQL queries from Simple to Advanced",
+        "project.highlight.feature3.title": "📈 Business Impact",
+        "project.highlight.feature3.desc": "Identified 34% YoY revenue growth drivers",
+        "project.highlight.button1": "View on GitHub",
+        "project.highlight.button2": "View SQL Solutions",
+        "project.insights.title": "Key Analytical Insights",
+        "project.insight1.title": "Revenue Growth Analysis",
+        "project.insight1.desc": "Identified 34% YoY revenue growth from 2021-2022, with Nairobi and Mombasa branches driving expansion.",
+        "project.insight2.title": "Product Affinity Analysis",
+        "project.insight2.desc": "Market basket analysis revealed top product pairs frequently purchased together for cross-selling opportunities.",
+        "project.insight3.title": "Branch Performance Scoring",
+        "project.insight3.desc": "Developed composite z-score metrics to classify branches into Top, Mid, and Low performance tiers.",
+        "project.insight4.title": "Holiday Sales Impact",
+        "project.insight4.desc": "Quantified 15-20% sales uplift during Kenyan public holidays like Jamhuri Day and Madaraka Day.",
+        "project.insight5.title": "Rolling Revenue Trends",
+        "project.insight5.desc": "Implemented 12-month rolling averages with YoY comparisons to detect sustained growth patterns.",
+        "project.insight6.title": "Category Margin Optimization",
+        "project.insight6.desc": "Analyzed margin percentages by category and city to identify most profitable product combinations.",
+        
+        // Languages Section
+        "languages.title": "Languages",
+        "languages.subtitle": "Multilingual communication skills for global business environments",
+        "languages.english": "Fluent",
+        "languages.german": "B2 Level",
+        "languages.french": "A1 Level",
+        
+        // Contact Section
+        "contact.title": "Get In Touch",
+        "contact.description": "I am actively seeking new opportunities as a Senior Data or Business Analyst | Data Engineer. Feel free to reach out for collaborations or job opportunities.",
+        "contact.linkedin": "LinkedIn Profile",
+        "contact.github": "GitHub Portfolio",
+        
+        // Footer
+        "footer.rights": "All rights reserved.",
+        "footer.nationality": "Kenyan National | Residency & Work Permit: Germany"
+      },
+      de: {
+        // Navigation
+        "nav.skills": "Fähigkeiten",
+        "nav.project": "Projekt",
+        "nav.languages": "Sprachen",
+        "nav.contact": "Kontakt",
+        
+        // Hero Section
+        "hero.title": "Frank Ouna",
+        "hero.subtitle": "Senior Data & Business Analyst | Data Engineer",
+        "hero.description": "Ergebnisorientierter Profi mit 20+ Jahren Erfahrung in Datentransformation, Advanced Analytics und Business Intelligence. Expertise in SQL, Python, Snowflake, Tableau und Power BI zur Bereitstellung umsetzbarer Erkenntnisse für strategische Entscheidungen.",
+        "hero.cta1": "Kontakt Aufnehmen",
+        "hero.cta2": "Lebenslauf Herunterladen",
+        "hero.cta3": "Samba Projekt Ansehen",
+        
+        // Skills Section
+        "skills.title": "Kernkompetenzen",
+        "skills.subtitle": "Umfassende technische Fähigkeiten entwickelt über 20+ Jahre in Datenanalyse und Business Intelligence",
+        "skills.category1": "Datenanalyse & Visualisierung",
+        "skills.category2": "Programmierung & Datenbanken",
+        "skills.category3": "Data Engineering & Cloud",
+        "skills.category4": "Business & Analytics",
+        "skills.item1": "Erweiterte Excel-Analyse",
+        "skills.item2": "Pivot-Tabellen & Dashboards",
+        "skills.item3": "Tableau",
+        "skills.item4": "Power BI",
+        "skills.item5": "Datenvisualisierung",
+        "skills.item6": "EDA (Explorative Datenanalyse)",
+        "skills.item7": "Python (Pandas, NumPy)",
+        "skills.item8": "SQL (PostgreSQL, MySQL, T-SQL)",
+        "skills.item9": "Datenbankverwaltung",
+        "skills.item10": "VBA-Automatisierung",
+        "skills.item11": "Statistische Analyse",
+        "skills.item12": "Skripterstellung",
+        "skills.item13": "Snowflake Data Warehouse",
+        "skills.item14": "ETL/ELT-Pipelinedesign",
+        "skills.item15": "Datenintegration",
+        "skills.item16": "Big-Data-Analyse",
+        "skills.item17": "Snowpipe",
+        "skills.item18": "JSON/Parquet-Verarbeitung",
+        "skills.item19": "Business Intelligence",
+        "skills.item20": "Statistische Analyse",
+        "skills.item21": "KPI-Entwicklung",
+        "skills.item22": "Projektmanagement",
+        "skills.item23": "Datengetriebene Entscheidungsfindung",
+        "skills.item24": "Betrugserkennungssysteme",
+        
+        // Project Section
+        "project.title": "Ausgewähltes Projekt",
+        "project.subtitle": "Erweiterte SQL-Analyse für Restaurantkette mit mehreren Filialen",
+        "project.highlight.title": "🍽️ Samba Restaurant SQL Analytics Portfolio-Projekt",
+        "project.highlight.description": "Eine umfassende Business-Intelligence-Lösung zur Analyse von 500.000+ Verkaufstransaktionen in 5 kenianischen Städten von 2009-2022",
+        "project.highlight.feature1.title": "📊 Datenarchitektur",
+        "project.highlight.feature1.desc": "Star-Schema mit 7 Dimensionstabellen in Snowflake",
+        "project.highlight.feature2.title": "🔍 Erweiterte Analysen",
+        "project.highlight.feature2.desc": "15 kuratierte SQL-Abfragen von einfach bis fortgeschritten",
+        "project.highlight.feature3.title": "📈 Geschäftliche Auswirkungen",
+        "project.highlight.feature3.desc": "Identifizierte 34% YoY-Umsatzwachstumstreiber",
+        "project.highlight.button1": "Auf GitHub ansehen",
+        "project.highlight.button2": "SQL-Lösungen ansehen",
+        "project.insights.title": "Wichtige analytische Erkenntnisse",
+        "project.insight1.title": "Umsatzwachstumsanalyse",
+        "project.insight1.desc": "Identifizierte 34% Umsatzwachstum pro Jahr von 2021-2022, angetrieben durch Filialen in Nairobi und Mombasa.",
+        "project.insight2.title": "Produktaffinitätsanalyse",
+        "project.insight2.desc": "Warenkorbanalyse zeigte Top-Produktpaare, die häufig zusammen gekauft werden, für Cross-Selling-Möglichkeiten.",
+        "project.insight3.title": "Filialleistungsbewertung",
+        "project.insight3.desc": "Entwickelte zusammengesetzte Z-Score-Metriken zur Klassifizierung von Filialen in Top-, Mittel- und Niedrigleistungsstufen.",
+        "project.insight4.title": "Feiertagsverkaufseinfluss",
+        "project.insight4.desc": "Quantifizierte 15-20% Verkaufssteigerung während kenianischer Feiertage wie Jamhuri Day und Madaraka Day.",
+        "project.insight5.title": "Rollierende Umsatztrends",
+        "project.insight5.desc": "Implementierte 12-Monats-Gleitdurchschnitte mit Jahresvergleichen zur Erkennung nachhaltiger Wachstumsmuster.",
+        "project.insight6.title": "Kategoriemargenoptimierung",
+        "project.insight6.desc": "Analysierte Margenprozentsätze nach Kategorie und Stadt zur Identifizierung profitabelster Produktkombinationen.",
+        
+        // Languages Section
+        "languages.title": "Sprachen",
+        "languages.subtitle": "Mehrsprachige Kommunikationsfähigkeiten für globale Geschäftsumgebungen",
+        "languages.english": "Fließend",
+        "languages.german": "B2 Niveau",
+        "languages.french": "A1 Niveau",
+        
+        // Contact Section
+        "contact.title": "Kontakt Aufnehmen",
+        "contact.description": "Ich suche aktiv nach neuen Möglichkeiten als Senior Data oder Business Analyst | Data Engineer. Kontaktieren Sie mich gerne für Zusammenarbeiten oder Stellenangebote.",
+        "contact.linkedin": "LinkedIn Profil",
+        "contact.github": "GitHub Portfolio",
+        
+        // Footer
+        "footer.rights": "Alle Rechte vorbehalten.",
+        "footer.nationality": "Kenia National | Aufenthalts- & Arbeitserlaubnis: Deutschland"
+      }
+    };
+
+    // Language switching functionality
+    let currentLang = 'en';
+
+    function switchLanguage(lang) {
+      currentLang = lang;
+      
+      // Update language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      
+      // Update HTML lang attribute
+      document.documentElement.lang = lang;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.value = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        }
+      });
+      
+      // Update navigation links
+      const navLinks = {
+        'skills': 'nav.skills',
+        'featured-project': 'nav.project',
+        'languages': 'nav.languages',
+        'contact': 'nav.contact'
+      };
+      
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href').replace('#', '');
+        if (navLinks[href]) {
+          link.textContent = translations[lang][navLinks[href]];
+        }
+      });
+      
+      // Save preference to localStorage
+      localStorage.setItem('preferred-language', lang);
+    }
+
+    // Initialize language
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferred-language') || 'en';
+      switchLanguage(savedLang);
+      
+      // Add event listeners to language buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          switchLanguage(this.dataset.lang);
+        });
+      });
+    });
+
     // Smooth scrolling for nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
